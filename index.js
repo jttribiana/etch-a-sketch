@@ -1,56 +1,65 @@
-const container = document.getElementById("container");
+// creating multiple divs using for loop
 
-const div1 = document.createElement("div");
-container.appendChild(div1);
+const size = 16;
 
-const div2 = document.createElement("div");
-container.appendChild(div2);
 
-const div3 = document.createElement("div");
-container.appendChild(div3);
 
-const div4 = document.createElement("div");
-container.appendChild(div4);
 
-const div5 = document.createElement("div");
-container.appendChild(div5);
 
-const div6 = document.createElement("div");
-container.appendChild(div6);
+    const container = document.getElementById('container');
 
-const div7 = document.createElement("div");
-container.appendChild(div7);
+    for (let i = 1; i <= size; i++ ){
+        const row = document.createElement('div');
+        row.className ="row";
+        container.appendChild(row);
+        
+        for (let j = 1; j <= size; j++ ){
+            const column = document.createElement('div');
+            column.className ="column";
+            row.appendChild(column);
+    }
+}
 
-const div8 = document.createElement("div");
-container.appendChild(div8);
 
-const div9 = document.createElement("div");
-container.appendChild(div9);
 
-const div10 = document.createElement("div");
-container.appendChild(div10);
 
-const div11 = document.createElement("div");
-container.appendChild(div11);
-
-const div12 = document.createElement("div");
-container.appendChild(div12);
-
-const div13 = document.createElement("div");
-container.appendChild(div13);
-
-const div14 = document.createElement("div");
-container.appendChild(div14);
-
-const div15 = document.createElement("div");
-container.appendChild(div15);
-
-const div16 = document.createElement("div");
-container.appendChild(div16);
-
-//creating mouse hover
 
 /*
+const container = document.getElementById("container");
+const amount = 5;
+
+for (let i = 1; i < amount; i++ ){
+    let newDiv = document.createElement('div').value = "hello";
+    container.append(newDiv);
+}
+*/
+
+//logic for creating a 16*16 grid
+
+
+
+//the loop wont stop til we have 16 box
+
+//flexbox adjustment
+
+
+
+/*
+
+Things to do in this project
+
+1. button that would pop up the answer of how many squares/grid
+the user wanted (max is 100)
+2. function that would make the user desired grid pop up
+
+Additional features: 
+1. randomize rgb values on each interaction on the square
+2. progressive darkening effect of square by 10%-- fully black in ten interactions
+*/
+
+/*
+
+mouse hover --
 
 const button = document.createElement('button');
 container.appendChild (button);

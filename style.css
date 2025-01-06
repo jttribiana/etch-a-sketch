@@ -1,0 +1,44 @@
+/* Reset styles */
+* {
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+}
+
+/* center the container vertical and horizontal */
+
+body {
+    display: flex;
+    justify-content: center;
+}
+
+#container {
+    display: flex;
+    flex-wrap: wrap;
+    border: 2px dotted rgb(96 139 168);
+    width: 500px;
+    height: 500px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: nowrap;
+    border: 1px solid black;
+    margin: 1rem;
+    width: 1rem;
+    height: 1rem;
+  }
+
+.column  {
+    border: 1px solid black;
+    margin: 1rem;
+    width: 1rem;
+    height: 1rem;
+  }

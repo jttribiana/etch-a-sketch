@@ -1,30 +1,52 @@
-// creating multiple divs using for loop
 
-const size = 16;
+//adjust the box grid size based
+
+/*
+const container = document.getElementById('container');
+let containerSize = 500;
+let n = 16;
 
 
+//creating div
+
+for (let i = 1; i <= size*size; i++ ){
+    let box = document.createElement('div');
+    box.className = 'box';
+    container.appendChild(box);
+
+}
+*/
+
+const containerSize = 400;
+let n = 20;
+let itemSize = containerSize/n;
+const container = document.getElementById('container');
+
+    for (let i = 1; i <= n*n; i++ ){
+        const box = document.createElement('div');
+        box.className ="box";
+        container.appendChild(box);
 
 
+        box.style.height = `${itemSize}px`
+        box.style.width = `${itemSize}px`
 
-    const container = document.getElementById('container');
-
-    for (let i = 1; i <= size; i++ ){
-        const row = document.createElement('div');
-        row.className ="row";
-        container.appendChild(row);
-        
-        for (let j = 1; j <= size; j++ ){
-            const column = document.createElement('div');
-            column.className ="column";
-            row.appendChild(column);
-    }
+        box.addEventListener('mouseover', () => {
+            box.style.backgroundColor = 'blue';
+        })
 }
 
 
-
+//mousehover 
 
 
 /*
+
+
+
+    box.style.height = `${containerSize/n}px`;
+    box.style.width = `${containerSize/n}px`;
+
 const container = document.getElementById("container");
 const amount = 5;
 

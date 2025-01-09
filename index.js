@@ -1,75 +1,19 @@
-
-
-
-/*working function code
-
-function createGrid (){
-    const container = document.getElementById('container');
-    const containerSize = 400;
-    let n = 16;
-    let itemSize = containerSize/n;
-
-    for (let i = 1; i < n*n; i++){
-        const box = document.createElement('div');
-        box.className ="box";
-        container.appendChild(box);
-
-        box.style.height = `${itemSize}px`
-        box.style.width = `${itemSize}px`
-
-
-
-        box.addEventListener('mouseover', () => {
-            box.style.backgroundColor = 'blue';
-        })
-}
-}
-
-createGrid ();
-
-
-//making drawbutton
-
-
 const drawBtn = document.createElement('button');
+const eraseBtn = document.createElement('button');
+const resetBtn = document.createElement('button');
+
 drawBtn.textContent = "Draw";
+eraseBtn.textContent = "Erase";
+resetBtn.textContent = "Reset";
+
 const listBtn = document.createElement('li');
 const buttons = document.getElementById('buttons');
 buttons.appendChild(listBtn);
 listBtn.appendChild(drawBtn);
+listBtn.appendChild(eraseBtn);
+listBtn.appendChild(resetBtn);
 
 
-drawBtn.addEventListener("click", function createGrid (){
-
-    const container = document.getElementById('container');
-    const containerSize = 400;
-    let n = 16;
-    let itemSize = containerSize/n;
-
-    for (let i = 0; i < n*n; i++){
-        const box = document.createElement('div');
-        box.className ="box";
-        container.appendChild(box);
-
-        box.style.height = `${itemSize}px`
-        box.style.width = `${itemSize}px`
-
-        box.addEventListener('mouseover', () => {
-            box.style.backgroundColor = 'blue';
-        })
-}
-})
-
-createGrid ();
-
-*/
-
-const drawBtn = document.createElement('button');
-drawBtn.textContent = "Draw";
-const listBtn = document.createElement('li');
-const buttons = document.getElementById('buttons');
-buttons.appendChild(listBtn);
-listBtn.appendChild(drawBtn);
 
 
 function createGrid (){
@@ -93,6 +37,17 @@ function createGrid (){
                 box.style.backgroundColor = 'blue';
             })
         } )
+
+        eraseBtn.addEventListener("click", function divErase (){
+            box.addEventListener('mouseover', () => {
+                box.style.backgroundColor = '';
+            })
+        } )
+
+        resetBtn.addEventListener("click", function divReset (){
+            box.style.backgroundColor = '';
+                
+        } )
         
 }
 }
@@ -101,32 +56,6 @@ createGrid ();
 
 
 
-
-
-/* On going problems,
-1. the last div doesnt become blue when hovered
-
-
-///add event listener using button
-const drawnBtn = document.createElement('button');
-drawnBtn.textContent = "draw";
-container.appendChild(drawnBtn);
-
-
-drawnBtn.addEventListener("click",createGrid())
-
-
-//to do-> make function that would draw pixels when click button
-
-/*
-
-
-*/
-
-//// erase
-
-//reset
-
-
-///increment/decrement
-
+//1. create new n
+//2. rainbow color
+//3. fix ui

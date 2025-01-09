@@ -12,24 +12,6 @@
     line-height: 1.5;
 }
 
-/* center the container vertical and horizontal */
-/*
-body {
-    display: flex;
-    justify-content: center;
-}
-
-#container {
-    width: 500px;
-    height: 500px;
-    border: 1px dotted blue;
-}
-
-.box {
-    width: 2rem;
-    border: 1px solid black;
-}
-*/
 
 body {
     display: flex;

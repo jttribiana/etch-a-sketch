@@ -1,3 +1,5 @@
+
+
 const mainContainer = document.getElementById('main');
 
 const input = document.createElement("input");
@@ -5,10 +7,11 @@ const input = document.createElement("input");
 const inputDiv = document.getElementById('input')
 inputDiv.appendChild(input);
 
+
 inputDiv.style.marginTop = "15px";
 input.style.height = "30px";
 input.style.weight = "10px";
-input.textContent = '16';
+input.value = 16;
 
 
 
@@ -54,24 +57,35 @@ mainContainer.appendChild(buttons);
 
 
 
+/*
 
-//creating grid w/new size
+changing the value of n
+
+input number > click resize button > change the value of n
+
+*/
+
 
 let n = 16;
+inputValue = input.value;
 
-function newGrid (){
-    if drawBtn.addEventListener("click", function newN (){
-       let n = ;
-    } )
-    else return n;
-}
+
+resizeBtn.addEventListener('click', function resizeGrid (){
+    n = newN;
+    newN = inputValue;
+
+} )
+
+
+
+console.log(n);
+console.log(inputValue);
 
 
 function createGrid (){
 
     const container = document.getElementById('container');
     const containerSize = 400;
-
     let itemSize = containerSize/n;
 
     for (let i = 0; i < n*n; i++){
@@ -99,6 +113,9 @@ function createGrid (){
             box.style.backgroundColor = '';
                 
         } )
+
+
+        
         
 }
 }

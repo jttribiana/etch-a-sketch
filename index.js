@@ -2,16 +2,14 @@
 
 const mainContainer = document.getElementById('main');
 
-const input = document.createElement("input");
 
-const inputDiv = document.getElementById('input')
+const inputDiv = document.getElementById('inputDiv');
+let input = document.createElement("input");
 inputDiv.appendChild(input);
-
 
 inputDiv.style.marginTop = "15px";
 input.style.height = "30px";
 input.style.weight = "10px";
-input.value = 16;
 
 
 
@@ -22,7 +20,7 @@ const eraseBtn = document.createElement('button');
 const resetBtn = document.createElement('button');
 const resizeBtn = document.createElement("button");
 
-input.setAttribute("type", "number");
+input.setAttribute("type", "text");
 
 drawBtn.textContent = "Draw";
 drawBtn.style.padding = "10px";
@@ -56,83 +54,62 @@ mainContainer.appendChild(inputDiv);
 mainContainer.appendChild(buttons);
 
 
-
-/*
-
-changing the value of n
-
-input number > click resize button > change the value of n
-
-*/
-
-
 let n = 16;
-inputValue = input.value;
-
-
-resizeBtn.addEventListener('click', function resizeGrid (){
-    n = newN;
-    newN = inputValue;
-
-} )
 
 
 
-console.log(n);
-console.log(inputValue);
+resizeBtn.addEventListener('click', resizeGrid);
 
-
-function createGrid (){
-
-    const container = document.getElementById('container');
-    const containerSize = 400;
-    let itemSize = containerSize/n;
-
-    for (let i = 0; i < n*n; i++){
-        const box = document.createElement('div');
-        box.className ="box";
-        container.appendChild(box);
-
-        box.style.height = `${itemSize}px`
-        box.style.width = `${itemSize}px`
-
-
-        drawBtn.addEventListener("click", function divBlue (){
-            box.addEventListener('mouseover', () => {
-                box.style.backgroundColor = '#403d3e';
-            })
-        } )
-
-        eraseBtn.addEventListener("click", function divErase (){
-            box.addEventListener('mouseover', () => {
-                box.style.backgroundColor = '';
-            })
-        } )
-
-        resetBtn.addEventListener("click", function divReset (){
-            box.style.backgroundColor = '';
-                
-        } )
-
-
-        
-        
-}
+function resizeGrid (){
+    let inputValue = Number(input.value);
+        const container = document.getElementById('container');
+        container.innerHTML = '';
+    
+        if (inputValue > 100 || inputValue < 1 ){
+            n = 5;
+            alert ("Choose values between 1-100");
+        } else {n = inputValue}
+        createGrid ();
 }
 
 
-
-createGrid ();
-
-
-/* new function
-
-let the n value = input box when clicked resised
-
-*/
+        function createGrid (){
 
 
+            const container = document.getElementById('container');
+            const containerSize = 400;
+            let itemSize = containerSize/n;
+        
+            for (let i = 0; i < n*n; i++){
+        
+                const box = document.createElement('div');
+                box.className ="box";
+                container.appendChild(box);
+        
+                box.style.height = `${itemSize}px`
+                box.style.width = `${itemSize}px`
+        
+        
+                drawBtn.addEventListener("click", function divBlue (){
+                    box.addEventListener('mouseover', () => {
+                        box.style.backgroundColor = '#403d3e';
+                    })
+                } )
+        
+                eraseBtn.addEventListener("click", function divErase (){
+                    box.addEventListener('mouseover', () => {
+                        box.style.backgroundColor = '';
+                    })
+                } )
+        
+                resetBtn.addEventListener("click", function divReset (){
+                    box.style.backgroundColor = '';
+                        
+                } )      
+        }
+        
+        }
+        
+        createGrid ();
 
-//1. create new n
-//2. rainbow color
-//3. fix ui
+
